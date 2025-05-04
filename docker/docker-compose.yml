@@ -26,13 +26,13 @@ services:
     ports:
       - "9092:9092"
     environment:
-      KAFKA_BROKER_ID: 1    # уникальный id брокера kafka в кластере. каждый брокер должен иметь уникальный id
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181     # строка подключения к zookeeper, указывающая адрес и порт (в данном случае контейнер kafka будет использовать zookeeper-контейнер доступный по имени и порту)
-      KAFKA_LOG4J_LOGGERS: "kafka.controller=INFO, kafka.producer.async.DefaultEventHandler=INFO, state.change.logger=INFO"     # настройка уровней журналирования для различных логгеров kafka
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://$DOCKERHOST:9092   # адрес и порт который будет объявлен в метаданных kafka. $DOCKERHOST(кастомная переменная, которую нужно задать) - хост машины на которой запущен докер, это позволяет клиентам извне контейнера обращаться к kafka-брокеру
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT   # свойство определяющее пары ключ - значение для каждого имени прослушивателя. в данном случае - простой протокол безопасности PLAINTEXT
-      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1   # фактор репликации для топика-смещения (сколько репликаций будет создано для этого топика)
-      KAFKA_AUTO_CREATE_TOPIC_ENABLE: 'true'    # свойство определяющее необходимость создания топиков при отправке сообщений на не существующий топик
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LOG4J_LOGGERS: "kafka.controller=INFO, kafka.producer.async.DefaultEventHandler=INFO, state.change.logger=INFO"
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://$DOCKERHOST:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPIC_ENABLE: 'true'
 
   mongodb:
     image: mongo:6.0.8
