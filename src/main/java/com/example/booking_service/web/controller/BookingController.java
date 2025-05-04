@@ -3,9 +3,7 @@ package com.example.booking_service.web.controller;
 import com.example.booking_service.mapper.BookingMapper;
 import com.example.booking_service.model.Booking;
 import com.example.booking_service.model.kafka.BookingRoomEvent;
-import com.example.booking_service.model.kafka.CreateUserEvent;
 import com.example.booking_service.service.BookingService;
-import com.example.booking_service.service.UserService;
 import com.example.booking_service.web.model.BookingRequest;
 import com.example.booking_service.web.model.BookingResponse;
 import com.example.booking_service.web.model.ResponseList;
@@ -49,6 +47,6 @@ public class BookingController {
     @GetMapping
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<ResponseList> findAll() {
-        return ResponseEntity.ok(bookingMapper.bookingListToResponseList(bookingService.getAll()));
+        return ResponseEntity.ok(bookingMapper.bookingListToResponseList(bookingService.findAll()));
     }
 }

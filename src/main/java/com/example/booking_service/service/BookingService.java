@@ -50,7 +50,7 @@ public class BookingService {
         return bookingRepository.save(booking);
     }
 
-    public List<Booking> getAll() {
+    public List<Booking> findAll() {
         return bookingRepository.findAll();
     }
 }

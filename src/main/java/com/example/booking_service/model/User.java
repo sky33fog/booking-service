@@ -22,7 +22,6 @@ public class User {
     private String email;
 
     @ElementCollection(fetch = FetchType.EAGER)
-//    @Enumerated(EnumType.STRING)
     private List<RoleType> roles = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)

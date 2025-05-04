@@ -34,10 +34,5 @@ public class KafkaCreateUserListener {
 
         userStatisticsRepository.save(new UserStatistics(uuid.toString(),
                 event.getUserId(), LocalDateTime.now().toString()));
-
-//        Optional<UserStatistics> userStat = userStatisticsRepository.findById(uuid.toString());
-//
-//        log.info("Received message: {}", userStat.orElseThrow(() -> new EntityNotFoundException("Entity in MongoDB not found.")).toString());
-//        log.info("Partition: {}; Topic: {}, Timestamp: {}", partition, topic, timestamp);
     }
 }

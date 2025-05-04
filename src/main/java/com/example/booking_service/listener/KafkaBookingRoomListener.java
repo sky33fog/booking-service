@@ -40,10 +40,5 @@ public class KafkaBookingRoomListener {
                 event.getDeparture(),
                 LocalDateTime.now().toString()
                 ));
-
-//        Optional<BookingStatistics> bookingStat = bookingStatisticsRepository.findById(uuid.toString());
-//
-//        log.info("Received message: {}", bookingStat.orElseThrow(() -> new EntityNotFoundException("Entity in MongoDB not found.")).toString());
-//        log.info("Partition: {}; Topic: {}, Timestamp: {}", partition, topic, timestamp);
     }
 }

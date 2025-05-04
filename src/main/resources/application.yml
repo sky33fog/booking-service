@@ -3,7 +3,6 @@ spring:
     allow-circular-references: true
   jpa:
     generate-ddl: true
-  #      open-in-view: false
   datasource:
     url: jdbc:postgresql://localhost:5432/booking_db
     username: postgres

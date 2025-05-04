@@ -4,7 +4,6 @@ import com.example.booking_service.exception.IncorrectPeriodException;
 import com.example.booking_service.model.Room;
 import com.example.booking_service.web.model.RoomFilter;
 import jakarta.persistence.criteria.Join;
-import jakarta.persistence.criteria.JoinType;
 import jakarta.persistence.criteria.Root;
 import jakarta.persistence.criteria.Subquery;
 import org.springframework.data.jpa.domain.Specification;

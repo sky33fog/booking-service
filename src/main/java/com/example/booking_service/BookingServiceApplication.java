@@ -10,4 +10,3 @@ public class BookingServiceApplication {
 		SpringApplication.run(BookingServiceApplication.class, args);
 	}
 }
-//todo Через аспекты сделать проверку пользователя на работу с собственной сущностью
